@@ -37,7 +37,10 @@ def text_from_html(body):
     visible_texts = filter(tag_visible, texts)
     return u" ".join(t.strip() for t in visible_texts)
 
-
+"""
+Code to take screenshots of webpages taken from:
+https://medium.com/@ronnyml/website-screenshot-generator-with-python-593d6ddb56cb
+"""
 def snapshot(webpage):
     DRIVER = 'chromedriver'
     driver = webdriver.Chrome(DRIVER)
@@ -50,10 +53,7 @@ def snapshot(webpage):
     screenshot = driver.save_screenshot(filename)
     driver.quit()
 
-"""
-Code to take screenshots of webpages taken from:
-https://medium.com/@ronnyml/website-screenshot-generator-with-python-593d6ddb56cb
-"""
+
 url_file = sys.argv[1] # path to file with URLs
 
 responses = []
